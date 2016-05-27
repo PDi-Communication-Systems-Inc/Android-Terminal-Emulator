@@ -809,16 +809,13 @@ public class Term extends Activity implements UpdateCallback, SharedPreferences.
 
         // huge number simply opens new window
         // TODO: add a way to restrict max number of windows per caller (possibly via reusing BoundSession)
-        switch (action) {
-            case RemoteInterface.PRIVACT_OPEN_NEW_WINDOW:
-                onResumeSelectWindow = Integer.MAX_VALUE;
-                break;
-            case RemoteInterface.PRIVACT_SWITCH_WINDOW:
-                int target = intent.getIntExtra(RemoteInterface.PRIVEXTRA_TARGET_WINDOW, -1);
-                if (target >= 0) {
+        if (action.equals(RemoteInterface.PRIVACT_OPEN_NEW_WINDOW)) 
+           onResumeSelectWindow = Integer.MAX_VALUE;
+        else if  (action.equals(RemoteInterface.PRIVACT_SWITCH_WINDOW)) {
+                int target = intent.getIntExtra(RemoteInterface.PRIVEXTRA_TARGET_WINDOW, -1); 
+                if (target >= 0) { 
                     onResumeSelectWindow = target;
-                }
-                break;
+                }               
         }
     }
 
