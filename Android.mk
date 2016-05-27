@@ -12,7 +12,6 @@ LOCAL_AIDL_INCLUDES := libtermexec/src/main/aidl/jackpal/androidterm/libtermexec
 LOCAL_MANIFEST_FILE := term/src/main/AndroidManifest.xml
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH), /term/src/main/res)
 LOCAL_RESOURCE_DIR += $(addprefix $(LOCAL_PATH), /emulatorview/src/main/res)
-$(info UGHGHGGGHGHHGGHGHHGHGHGHGHGHGHGHGHGH $(LOCAL_RESOURCE_DIR))
 
 LOCAL_PACKAGE_NAME := jackpal.androidterm
 LOCAL_MODULE_TAGS := optional
