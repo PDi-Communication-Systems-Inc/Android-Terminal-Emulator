@@ -4,6 +4,11 @@
       android:versionName="1.0.70"
       android:versionCode="71"
       android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="4"
+              android:targetSdkVersion="18"
+              android:maxSdkVersion="21" />
+
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
