@@ -706,7 +706,7 @@ public class Term extends Activity implements UpdateCallback, SharedPreferences.
                 startActivity(openHelp);
         }
         // Hide the action bar if appropriate
-        if (mActionBarMode == TermSettings.ACTION_BAR_MODE_HIDES) {
+        if ((mActionBar != null) && (mActionBarMode == TermSettings.ACTION_BAR_MODE_HIDES)) {
             mActionBar.hide();
         }
         return super.onOptionsItemSelected(item);
