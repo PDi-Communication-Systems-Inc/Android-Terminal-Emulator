@@ -2,6 +2,15 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_MODULE := libjackpal-termexec2
+LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_SRC_FILES := libtermexec/src//main/jni/process.cpp
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
 LOCAL_SRC_FILES := $(call all-java-files-under, term/src/main)
 LOCAL_SRC_FILES += $(call all-java-files-under, libtermexec/src/main)
 LOCAL_SRC_FILES += $(call all-java-files-under, emulatorview)
@@ -22,5 +31,7 @@ LOCAL_CERTIFICATE := platform
 # add-resource to add
 LOCAL_AAPT_FLAGS := --auto-add-overlay 
 
+LOCAL_SHARED_LIBRARIES := libjackpal-termexec2
+
 include $(BUILD_PACKAGE)
-include $(call all-makefiles-under,$(LOCAL_PATH)/libtermexec)
+
