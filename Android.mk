@@ -5,7 +5,18 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libjackpal-termexec2
 LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := liblog
-LOCAL_SRC_FILES := libtermexec/src//main/jni/process.cpp
+LOCAL_SRC_FILES := libtermexec/src/main/jni/process.cpp
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libjackpal-androidterm5
+LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_SRC_FILES := term/src/main/jni/common.cpp \
+                   term/src/main/jni/fileCompat.cpp \
+                   term/src/main/jni/termExec.cpp
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -31,7 +42,8 @@ LOCAL_CERTIFICATE := platform
 # add-resource to add
 LOCAL_AAPT_FLAGS := --auto-add-overlay 
 
-LOCAL_SHARED_LIBRARIES := libjackpal-termexec2
+LOCAL_SHARED_LIBRARIES := libjackpal-termexec2 \
+			  libjackpal-androidterm5
 
 include $(BUILD_PACKAGE)
 
